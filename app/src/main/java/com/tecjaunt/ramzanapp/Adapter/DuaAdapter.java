@@ -48,7 +48,7 @@ public class DuaAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         this.inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View itemView = this.inflater.inflate(R.layout.item_recycler_dua, parent, false);
-        LinearLayout data_dua=(LinearLayout) itemView.findViewById(R.id.data_dua);
+        LinearLayout data_dua=(LinearLayout) itemView.findViewById(R.id.dua_items);
         TextView name = (TextView) itemView.findViewById(R.id.arabic_dua);
 
         TextView meanings = (TextView)itemView.findViewById(R.id.title_dua);
