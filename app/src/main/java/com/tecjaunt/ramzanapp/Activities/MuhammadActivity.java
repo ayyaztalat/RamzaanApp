@@ -1,13 +1,17 @@
 package com.tecjaunt.ramzanapp.Activities;
 
+import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.widget.ListView;
 
-import com.tecjaunt.ramzanapp.Adapter.AllahNamesAdapter;
 import com.tecjaunt.ramzanapp.Adapter.MuhammadNamesAdapter;
 import com.tecjaunt.ramzanapp.R;
+
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 public class MuhammadActivity extends AppCompatActivity {
 
@@ -48,14 +52,32 @@ public class MuhammadActivity extends AppCompatActivity {
     ListView muhammad_names_recycler;
     LinearLayoutManager manager;
     MuhammadNamesAdapter adapter;
+    ArrayList<Integer> arrayList=new ArrayList<Integer>();
+    AssetManager assetManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.muhammad_layout);
 
+        try {
+            // for assets folder add empty string
+
+            // for assets/subFolderInAssets add only subfolder name
+            Field[] fields=R.raw.class.getDeclaredFields();
+            for (int count=100;count<fields.length;count++){
+                arrayList.add(fields[count].getInt(fields[count]));
+            }
+
+            // if(filelistInSubfolder == null) ............
+
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+
         muhammad_names_recycler=findViewById(R.id.ListView_muhammad);
 
-        adapter=new MuhammadNamesAdapter(this,imagesSmall,meaning,names);
+        adapter=new MuhammadNamesAdapter(this,imagesSmall,meaning,names,arrayList);
 
         muhammad_names_recycler.setAdapter(adapter);
     }

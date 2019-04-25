@@ -41,7 +41,7 @@ public class AllahNamesAdapter extends BaseAdapter {
     }
 
     public int getCount() {
-        return Integer.valueOf(99).intValue();
+        return Integer.valueOf(100).intValue();
     }
 
     public Object getItem(int position) {
