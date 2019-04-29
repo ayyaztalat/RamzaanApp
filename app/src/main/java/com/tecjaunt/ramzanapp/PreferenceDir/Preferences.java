@@ -160,4 +160,37 @@ public class Preferences {
     public String getHijirDay() {
        return Prefs.getString("hijriDay","");
     }
+
+
+    public void setCheckAlarm1(Boolean alarm){
+        Prefs.putBoolean("alarm1",alarm);
+    }public void setCheckAlarm2(Boolean alarm){
+        Prefs.putBoolean("alarm2",alarm);
+    }public void setCheckAlarm3(Boolean alarm){
+        Prefs.putBoolean("alarm3",alarm);
+    }public void setCheckAlarm4(Boolean alarm){
+        Prefs.putBoolean("alarm4",alarm);
+    }public void setCheckAlarm5(Boolean alarm){
+        Prefs.putBoolean("alarm5",alarm);
+    }
+
+    public Boolean getCheckAlarm1(){
+       return Prefs.getBoolean("alarm1",false);
+    }public Boolean getCheckAlarm2(){
+       return Prefs.getBoolean("alarm2",false);
+    }public Boolean getCheckAlarm3(){
+      return   Prefs.getBoolean("alarm3",false);
+    }public Boolean getCheckAlarm4(){
+      return   Prefs.getBoolean("alarm4",false);
+    }public Boolean getCheckAlarm5(){
+       return    Prefs.getBoolean("alarm5",false);
+    }
+
+    public void setFiqa(String fiqa) {
+        Prefs.putString("fiqa",fiqa);
+    }
+
+    public String getFiqa(){
+        return Prefs.getString("fiqa","1");
+    }
 }

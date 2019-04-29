@@ -77,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
-                android:text="00:02:32"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="@dimen/_22sdp"
                 android:textStyle="bold"
@@ -96,20 +96,22 @@
                 android:textSize="@dimen/_15sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.18"
+                app:layout_constraintHorizontal_bias="0.167"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.501" />
 
             <TextView
                 android:id="@+id/Dhuhur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:layout_marginTop="8dp"
                 android:text="Dhuhur"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15sdp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintHorizontal_bias="0.185"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fajr" />
 
@@ -118,11 +120,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:layout_marginTop="8dp"
                 android:text="Asr"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15sdp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.18"
+                app:layout_constraintHorizontal_bias="0.164"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Dhuhur" />
 
@@ -131,11 +134,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:layout_marginTop="8dp"
                 android:text="Maghrib"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15sdp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.208"
+                app:layout_constraintHorizontal_bias="0.192"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Asr" />
 
@@ -143,13 +147,14 @@
                 android:id="@+id/Isha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="4dp"
 
+                android:layout_marginEnd="8dp"
                 android:text="Isha"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15sdp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.189"
+                app:layout_constraintHorizontal_bias="0.174"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Magrib" />
 
@@ -164,15 +169,17 @@
                 android:textSize="@dimen/_15sdp"
                 app:layout_constraintBottom_toBottomOf="@+id/fajr"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.61"
+                app:layout_constraintHorizontal_bias="0.607"
                 app:layout_constraintStart_toEndOf="@+id/fajr"
-                app:layout_constraintTop_toTopOf="@+id/fajr" />
+                app:layout_constraintTop_toTopOf="@+id/fajr"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/Dhuhur_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:layout_marginTop="8dp"
                 android:text="12:15"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15sdp"
@@ -186,6 +193,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="15:32"
                 android:textColor="@color/white"
@@ -201,6 +209,7 @@
                 android:layout_height="wrap_content"
 
 
+                android:layout_marginTop="8dp"
                 android:text="18:29"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15sdp"
@@ -214,6 +223,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:layout_marginTop="8dp"
                 android:text="19:59"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15sdp"
@@ -223,34 +233,37 @@
                 app:layout_constraintTop_toBottomOf="@+id/Magrib_time" />
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:id="@+id/Dhur_alarm"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_margin="@dimen/_3sdp"
                 app:layout_constraintBottom_toTopOf="@+id/Asr_time"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.729"
+                app:layout_constraintHorizontal_bias="0.709"
                 app:layout_constraintStart_toStartOf="@+id/Dhuhur_time"
                 app:layout_constraintTop_toTopOf="@+id/Dhuhur_time"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/alarm" />
+
+            <ImageView
+                android:id="@+id/fajr_alarm"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_margin="@dimen/_3sdp"
+
+                app:layout_constraintBottom_toTopOf="@+id/Dhuhur_time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.34"
+                app:layout_constraintStart_toEndOf="@+id/fajr_time"
+                app:layout_constraintTop_toTopOf="@+id/fajr_time"
                 app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/alarm" />
 
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/Dhuhur_time"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.446"
-                app:layout_constraintStart_toEndOf="@+id/fajr_time"
-                app:layout_constraintTop_toTopOf="@+id/fajr_time"
-                app:srcCompat="@drawable/alarm" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:id="@+id/isha_alarm"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_margin="@dimen/_3sdp"
                 app:layout_constraintBottom_toBottomOf="@+id/Isha_time"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.729"
@@ -260,9 +273,10 @@
                 app:srcCompat="@drawable/alarm" />
 
             <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:id="@+id/magrib_alarm"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_margin="@dimen/_3sdp"
                 app:layout_constraintBottom_toTopOf="@+id/Isha_time"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.73"
@@ -272,10 +286,10 @@
                 app:srcCompat="@drawable/alarm" />
 
             <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_marginStart="8dp"
+                android:id="@+id/asr_alarm"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_margin="@dimen/_3sdp"
                 app:layout_constraintBottom_toTopOf="@+id/Magrib_time"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.711"

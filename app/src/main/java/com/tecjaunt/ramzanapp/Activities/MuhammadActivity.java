@@ -1,9 +1,12 @@
 package com.tecjaunt.ramzanapp.Activities;
 
 import android.content.res.AssetManager;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.tecjaunt.ramzanapp.Adapter.MuhammadNamesAdapter;
@@ -54,10 +57,12 @@ public class MuhammadActivity extends AppCompatActivity {
     MuhammadNamesAdapter adapter;
     ArrayList<Integer> arrayList=new ArrayList<Integer>();
     AssetManager assetManager;
+    ImageView back_press;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.muhammad_layout);
+        back_press=findViewById(R.id.back_press);
 
         try {
             // for assets folder add empty string
@@ -80,6 +85,13 @@ public class MuhammadActivity extends AppCompatActivity {
         adapter=new MuhammadNamesAdapter(this,imagesSmall,meaning,names,arrayList);
 
         muhammad_names_recycler.setAdapter(adapter);
+
+        back_press.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override

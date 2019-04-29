@@ -7,7 +7,7 @@
     <android.support.v7.widget.CardView
         android:layout_margin="@dimen/_8sdp"
         android:id="@+id/data_dua"
-        app:cardCornerRadius="@dimen/_10sdp"
+
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -22,6 +22,7 @@
                 android:id="@+id/title_dua"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14sdp"
+                android:padding="@dimen/_8sdp"
                 android:text="Dua Before performing ablution"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -33,6 +34,7 @@
 
             <TextView
                 android:id="@+id/arabic_dua"
+                android:padding="@dimen/_8sdp"
                 android:layout_width="match_parent"
                 android:text="بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ"
                 android:textSize="@dimen/_14sdp"

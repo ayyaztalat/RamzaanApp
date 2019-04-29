@@ -34,6 +34,7 @@ import com.tecjaunt.ramzanapp.Adapter.CalenderAdapter;
 import com.tecjaunt.ramzanapp.PreferenceDir.Preferences;
 import com.tecjaunt.ramzanapp.R;
 
+import com.tecjaunt.ramzanapp.Services.Services;
 import com.tecjaunt.ramzanapp.networkArea.APIClient;
 import com.tecjaunt.ramzanapp.networkArea.APIServce;
 import com.tecjaunt.ramzanapp.networkArea.TimingNetwork.TimingModel;
@@ -64,6 +65,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         preferences=new Preferences(this);
         long time= System.currentTimeMillis();
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             calendar = Calendar.getInstance();
             year= calendar.get(Calendar.YEAR);
@@ -77,9 +79,9 @@ public class HomeActivity extends AppCompatActivity {
 
         preferences.setYear(year);
         preferences.setMonth(month);
+        getLatlng();
 
-
-
+        startService(new Intent(getApplicationContext(), Services.class));
 
        // array=new TimingNetworkArray(this,String.valueOf(time));
         Azan_time_layout=findViewById(R.id.Azan_time_layout);
@@ -87,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
         Allah_name_layout=findViewById(R.id.Allah_name_layout);
         Muhammad_name_layout=findViewById(R.id.Muhammad_name_layout);
         Dua_layout=findViewById(R.id.Dua_layout);
-        getLatlng();
+
         isStoragePermissionGranted();
         onClick();
         startSecond_API_For_DATE_PRAYER(time);
@@ -142,8 +144,8 @@ public class HomeActivity extends AppCompatActivity {
         preferences.setDate(date+"-"+Month+"-"+year);
       //  preferences.setDay(day);
 
-        String   OPEN_ISLAM_API="http://api.aladhan.com/v1/timings/"+time+"?latitude="+preferences.getLatitude()+"&longitude="+preferences.getLongitude()+"&method="+2;
-
+        String   OPEN_ISLAM_API="http://api.aladhan.com/v1/timings/"+time+"?latitude="+preferences.getLatitude()+"&longitude="+preferences.getLongitude()+"&method="+preferences.getFiqa();
+        Log.e("error", "startSecond_API_For_DATE_PRAYER: "+OPEN_ISLAM_API );
         RequestQueue queue = getRequestQueue();
         JsonObjectRequest objectRequest =  new JsonObjectRequest(
                 Request.Method.GET, OPEN_ISLAM_API, null, new Response.Listener<JSONObject>(){
@@ -290,7 +292,7 @@ queue.add(objectRequest);
     @Override
     protected void onPause() {
         super.onPause();
-        client.removeLocationUpdates(new LocationCallback());
+    //    client.removeLocationUpdates(new LocationCallback());
     }
 
     @Override
@@ -345,13 +347,13 @@ queue.add(objectRequest);
     public  boolean isStoragePermissionGranted() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    == PackageManager.PERMISSION_GRANTED) {
+                    == PackageManager.PERMISSION_GRANTED||checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED) {
           //      Log.v("error","Permission is granted");
                 return true;
             } else {
 
             //    Log.v("error","Permission is revoked");
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.ACCESS_FINE_LOCATION}, 1);
                 return false;
             }
         }
@@ -390,5 +392,11 @@ queue.add(objectRequest);
             }
         });
         builder.show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
     }
 }

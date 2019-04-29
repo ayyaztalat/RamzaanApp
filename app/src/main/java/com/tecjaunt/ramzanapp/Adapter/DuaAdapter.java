@@ -16,21 +16,23 @@ import com.tecjaunt.ramzanapp.R;
 
 public class DuaAdapter extends BaseAdapter {
     Context context;
+    String[] dua_title;
     String[] duas_arabic;
     String[] meaning;
     String[] translatitions;
     LayoutInflater inflater;
 
-    public DuaAdapter(Context context, String[] duas_arabic, String[] meaning, String[] translatitions) {
+    public DuaAdapter(Context context, String[] dua_title, String[] duas_arabic, String[] meaning, String[] translatitions) {
         this.context=context;
         this.duas_arabic=duas_arabic;
         this.meaning= meaning;
         this.translatitions=translatitions;
+        this.dua_title=dua_title;
     }
 
     @Override
     public int getCount() {
-        return Integer.valueOf(7).intValue();
+        return Integer.valueOf(22).intValue();
     }
 
     @Override
@@ -54,7 +56,7 @@ public class DuaAdapter extends BaseAdapter {
         TextView meanings = (TextView)itemView.findViewById(R.id.title_dua);
 
         name.setText(duas_arabic[position]);
-        meanings.setText(meaning[position]);
+        meanings.setText(dua_title[position]);
 
         data_dua.setOnClickListener(new View.OnClickListener() {
             @Override

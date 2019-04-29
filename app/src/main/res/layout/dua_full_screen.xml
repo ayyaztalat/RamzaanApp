@@ -38,123 +38,129 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="@dimen/_250sdp"
-        android:layout_height="@dimen/_350sdp"
+        android:layout_height="@dimen/_450sdp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/_12sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3">
-
+        app:layout_constraintVertical_bias="0.62">
 
 
         <LinearLayout
             android:id="@+id/linear_main_vertical"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="@dimen/_8sdp"
-            android:weightSum="7"
             android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:weightSum="7">
 
             <LinearLayout
                 android:id="@+id/top_layout"
-                android:weightSum="2"
-                android:layout_weight="0.5"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="0dp">
+                android:layout_height="0dp"
+                android:layout_weight="0.6"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1.6"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_13sdp"
-                    android:text="Dua before performing ablution"/>
+                    android:layout_weight="1.6"
+                    android:padding="@dimen/_8sdp"
+                    android:text="Dua before performing ablution"
+                    android:textSize="@dimen/_13sdp" />
 
                 <ImageView
                     android:id="@+id/share"
-                    android:layout_weight="0.4"
                     android:layout_width="0dp"
-                    android:src="@drawable/share"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="0.4"
                     android:padding="@dimen/_5sdp"
-                    android:layout_height="wrap_content" />
+                    android:src="@drawable/share" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:background="@color/black"
-                android:alpha="0.2"
-                android:layout_weight="0.1"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginBottom="@dimen/_5sdp"/>
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="0.1"
+                android:alpha="0.2"
+                android:background="@color/black" />
 
             <ScrollView
                 android:layout_width="wrap_content"
-                android:layout_weight="1.2"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:layout_height="0dp">
-
-            <TextView
-                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:textSize="@dimen/_14sdp"
-                android:gravity="center"
-                android:id="@+id/arabic_text"
+                android:layout_weight="1.2"
+                android:gravity="center">
 
-                android:text="بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم"/>
+                <TextView
+                    android:id="@+id/arabic_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم"
+
+                    android:textSize="@dimen/_14sdp" />
             </ScrollView>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1.2"
-                android:textSize="@dimen/_14sdp"
                 android:gravity="center"
-                android:text="Transiliterations"/>
+                android:text="Transiliterations"
+                android:textSize="@dimen/_14sdp" />
+
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_weight="1.7"
-                android:layout_height="0dp">
-<TextView
-                android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_weight="1.7">
 
-                android:textSize="@dimen/_14sdp"
-                android:gravity="center"
-    android:id="@+id/transliterations"
-                android:layout_gravity="center"
-                android:text="      Bismillah hir-Rahman nir-Rahim"/>
+                <TextView
+                    android:id="@+id/transliterations"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="      Bismillah hir-Rahman nir-Rahim"
+                    android:textSize="@dimen/_14sdp" />
             </ScrollView>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:textSize="@dimen/_14sdp"
                 android:gravity="center"
-                android:text="English"/>
+                android:text="English"
+                android:textSize="@dimen/_14sdp" />
+
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_weight="1.5"
-                android:layout_margin="@dimen/_15sdp"
+                android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_height="0dp">
-  <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:layout_weight="1.5">
 
-      android:id="@+id/meaning"
-                android:textSize="@dimen/_14sdp"
-                android:gravity="center"
-                android:text="In the name of Allah, the Merciful, the Compassionate"/>
+                <TextView
+                    android:id="@+id/meaning"
+                    android:layout_width="match_parent"
 
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="In the name of Allah, the Merciful, the Compassionate"
+                    android:textSize="@dimen/_14sdp" />
 
 
             </ScrollView>
         </LinearLayout>
-
 
 
     </android.support.v7.widget.CardView>

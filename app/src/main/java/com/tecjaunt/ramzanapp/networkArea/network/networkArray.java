@@ -24,7 +24,7 @@ public class networkArray {
     private String OPEN_ISLAM_API;
     private String latitude;
     private String longitude;
-    private int method=2;
+    private String method;
     private int month;
     private int year;
     Preferences preferences;
@@ -37,6 +37,7 @@ public class networkArray {
     preferences=new Preferences(context);
     latitude=preferences.getLatitude();
     longitude=preferences.getLongitude();
+    method=preferences.getFiqa();
     month=preferences.getMonth();
     year=preferences.getYear();
 

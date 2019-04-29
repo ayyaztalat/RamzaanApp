@@ -56,73 +56,133 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/select"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.19">
 
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/country_first"
-                    android:src="@drawable/usa"
-                    android:layout_margin="@dimen/_5sdp"
-                    android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_100sdp" />
+
+                    <ImageView
+                        android:id="@+id/country_first"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:src="@drawable/usa" />
+
                     <ImageView
                         android:id="@+id/selector1"
-                        android:src="@drawable/done"
-                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignEnd="@+id/country_first"
                         android:layout_alignParentEnd="true"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:src="@drawable/done"
+                        android:visibility="gone" />
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/country_second"
-                    android:src="@drawable/pakistan"
-                    android:layout_margin="@dimen/_5sdp"
-                    android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_100sdp" />
+
+                    <ImageView
+                        android:id="@+id/country_second"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:src="@drawable/pakistan" />
+
                     <ImageView
                         android:id="@+id/selector2"
-                        android:src="@drawable/done"
-                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignEnd="@+id/country_second"
                         android:layout_alignParentEnd="true"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:src="@drawable/done"
+                        android:visibility="gone" />
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/country_Third"
-                    android:src="@drawable/spain_flag"
-                    android:layout_margin="@dimen/_5sdp"
-                    android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_100sdp" />
+
+                    <ImageView
+                        android:id="@+id/country_Third"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:src="@drawable/spain_flag" />
+
                     <ImageView
                         android:id="@+id/selector3"
-                        android:src="@drawable/done"
-                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignEnd="@+id/country_Third"
                         android:layout_alignParentEnd="true"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:src="@drawable/done"
+                        android:visibility="gone" />
                 </RelativeLayout>
             </LinearLayout>
         </HorizontalScrollView>
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top"
+        app:layout_constraintVertical_bias="0.63">
+
+        <TextView
+            android:id="@+id/firqa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_18sdp"
+            android:text="Feqa"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_22sdp" />
+
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/hunfi"
+                android:text="Hanfi"
+                android:textSize="@dimen/_18sdp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:padding="@dimen/_8sdp"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/jafri"
+                android:text="Jafri"
+                android:textSize="@dimen/_18sdp"
+                android:textColor="@color/white"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_8sdp"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+
+    </LinearLayout>
 
 
     <Button
