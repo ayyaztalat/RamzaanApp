@@ -34,14 +34,18 @@ public class CalenderAdapter extends RecyclerView.Adapter<CalenderAdapter.Holder
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int i) {
-
         IslamModel model=arrayList.get(i);
-
-
         holder.ramzan_date.setText(model.ramzan_date);
         holder.Date.setText(model.date);
         holder.day.setText(model.day);
         holder.iftar_time.setText(model.aftari_time);
+        holder.Dhuhr_time.setText(model.Dhuhr);
+        holder.Asr_time.setText(model.Asr);
+        holder.Sunrise_time.setText(model.Sunrise);
+        holder.Sunset_time.setText(model.Sunset);
+        holder.Isha_time.setText(model.Isha);
+        holder.Imsak_time.setText(model.Imsak);
+        holder.Midnight_time.setText(model.Midnight);
         holder.sehr_time.setText(model.sahri_time);
 
     }
@@ -52,7 +56,14 @@ public class CalenderAdapter extends RecyclerView.Adapter<CalenderAdapter.Holder
     }
 
     public class Holder extends RecyclerView.ViewHolder {
-        TextView ramzan_date,Date,day,sehr_time,iftar_time;
+        TextView ramzan_date,
+                Date,day,
+                sehr_time,
+                Sunrise_time,
+                Dhuhr_time,
+                Asr_time,
+                Sunset_time,
+                iftar_time,Isha_time,Imsak_time,Midnight_time;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
@@ -61,7 +72,14 @@ public class CalenderAdapter extends RecyclerView.Adapter<CalenderAdapter.Holder
             Date=itemView.findViewById(R.id.Date);
             day=itemView.findViewById(R.id.day);
             sehr_time=itemView.findViewById(R.id.sehr_time);
+            Sunrise_time=itemView.findViewById(R.id.Sunrise_time);
+            Dhuhr_time=itemView.findViewById(R.id.Dhuhr_time);
+            Asr_time=itemView.findViewById(R.id.Asr_time);
+            Sunset_time=itemView.findViewById(R.id.Sunset_time);
             iftar_time=itemView.findViewById(R.id.iftar_time);
+            Isha_time=itemView.findViewById(R.id.Isha_time);
+            Imsak_time=itemView.findViewById(R.id.Imsak_time);
+            Midnight_time=itemView.findViewById(R.id.Midnight_time);
         }
     }
 }

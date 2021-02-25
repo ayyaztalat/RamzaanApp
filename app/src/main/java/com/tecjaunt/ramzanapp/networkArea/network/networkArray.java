@@ -147,7 +147,14 @@ public class networkArray {
 
 
             dtEntry.sahri_time=timmings.getString("Fajr");
+            dtEntry.Sunrise=timmings.getString("Sunrise");
             dtEntry.aftari_time=timmings.getString("Maghrib");
+            dtEntry.Dhuhr=timmings.getString("Dhuhr");
+            dtEntry.Asr=timmings.getString("Asr");
+            dtEntry.Sunset=timmings.getString("Sunset");
+            dtEntry.Isha=timmings.getString("Isha");
+            dtEntry.Imsak=timmings.getString("Imsak");
+            dtEntry.Midnight=timmings.getString("Midnight");
 
 
             // pull out the date and put it in our own data

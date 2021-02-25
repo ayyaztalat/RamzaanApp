@@ -69,7 +69,8 @@ public class HomeActivity extends AppCompatActivity {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             calendar = Calendar.getInstance();
             year= calendar.get(Calendar.YEAR);
-            month= calendar.get(Calendar.MONTH);
+            month= calendar.get(Calendar.MONTH)+1;
+            Log.e("error",month+"-"+year);
         }else{
             java.util.Calendar calendar1= java.util.Calendar.getInstance();
             year= calendar1.get(java.util.Calendar.YEAR);

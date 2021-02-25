@@ -83,31 +83,31 @@ public class AzanTimeActivity extends AppCompatActivity {
         if (preferences.getCheckAlarm1()){
             fajr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm));
         }else{
-            fajr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_mute));
+            fajr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_off));
         }
 
         if (preferences.getCheckAlarm2()){
             Dhuhr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm));
         }else{
-            Dhuhr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_mute));
+            Dhuhr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_off));
         }
 
         if (preferences.getCheckAlarm3()){
             Asr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm));
         }else{
-            Asr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_mute));
+            Asr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_off));
         }
 
         if (preferences.getCheckAlarm4()){
             Magrib_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm));
         }else{
-            Magrib_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_mute));
+            Magrib_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_off));
         }
 
         if (preferences.getCheckAlarm5()){
             Isha_Image.setImageDrawable(getResources().getDrawable(R.drawable.alarm));
         }else{
-            Isha_Image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_mute));
+            Isha_Image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_off));
         }
 
 
@@ -181,7 +181,7 @@ public class AzanTimeActivity extends AppCompatActivity {
         }else{
             check_five=false;
             preferences.setCheckAlarm5(check_five);
-            Isha_Image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_mute));
+            Isha_Image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_off));
             Intent intent = new Intent(AzanTimeActivity.this, Alarm.class);
             PendingIntent sender = PendingIntent.getBroadcast(AzanTimeActivity.this, 5, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
@@ -216,7 +216,7 @@ public class AzanTimeActivity extends AppCompatActivity {
         }else{
             check_four=false;
             preferences.setCheckAlarm4(check_four);
-            Magrib_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_mute));
+            Magrib_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_off));
             Intent intent = new Intent(getApplicationContext(), Alarm.class);
             PendingIntent sender = PendingIntent.getBroadcast(getApplicationContext(), 4, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
@@ -249,7 +249,7 @@ public class AzanTimeActivity extends AppCompatActivity {
         }else{
             check_three=false;
             preferences.setCheckAlarm3(check_three);
-            Asr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_mute));
+            Asr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_off));
             Intent intent = new Intent(getApplicationContext(), Alarm.class);
             PendingIntent sender = PendingIntent.getBroadcast(getApplicationContext(), 3, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
@@ -283,7 +283,7 @@ public class AzanTimeActivity extends AppCompatActivity {
             check_two=false;
 
             preferences.setCheckAlarm2(check_two);
-            Dhuhr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_mute));
+            Dhuhr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_off));
             Intent intent = new Intent(getApplicationContext(), Alarm.class);
             PendingIntent sender = PendingIntent.getBroadcast(getApplicationContext(), 2, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
@@ -315,7 +315,7 @@ public class AzanTimeActivity extends AppCompatActivity {
         }else{
             check_one=false;
             preferences.setCheckAlarm1(check_one);
-            fajr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_mute));
+            fajr_image.setImageDrawable(getResources().getDrawable(R.drawable.alarm_off));
             Intent intent = new Intent(getApplicationContext(), Alarm.class);
             PendingIntent sender = PendingIntent.getBroadcast(getApplicationContext(), 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);

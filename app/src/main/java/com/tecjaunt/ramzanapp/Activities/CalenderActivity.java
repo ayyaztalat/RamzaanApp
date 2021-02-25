@@ -74,27 +74,7 @@ public class CalenderActivity extends AppCompatActivity {
     networkArray array;
     private void getPrayerTimes() {
         progressDialog.show();
-        /*APIServce servce= APIClient.getClient().create(APIServce.class);
-        Call<CalenderModel> modelCall=servce.modelCall(latitude,longitude,2,month,year);
-        modelCall.enqueue(new Callback<CalenderModel>() {
-            @Override
-            public void onResponse(Call<CalenderModel> call, Response<CalenderModel> response) {
-                if (response.isSuccessful()){
-                    CalenderModel model=response.body();
-                    arrayList.add(model);
 
-                    adapter=new CalenderAdapter(CalenderActivity.this,arrayList);
-                    reyclerview_calender.setAdapter(adapter);
-
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<CalenderModel> call, Throwable t) {
-
-            }
-        });*/
 
             array.GETWeather(new NetworkListener<ArrayList>() {
                 @Override
