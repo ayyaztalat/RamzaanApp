@@ -4,20 +4,17 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.pixplicity.easyprefs.library.Prefs;
 import com.tecjaunt.ramzanapp.Alarm;
 import com.tecjaunt.ramzanapp.PreferenceDir.Preferences;
 import com.tecjaunt.ramzanapp.R;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

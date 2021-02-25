@@ -2,17 +2,16 @@ package com.tecjaunt.ramzanapp.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.tecjaunt.ramzanapp.Adapter.CalenderAdapter;
 import com.tecjaunt.ramzanapp.Adapter.TimeAdapter;
 import com.tecjaunt.ramzanapp.PreferenceDir.Preferences;
 import com.tecjaunt.ramzanapp.R;

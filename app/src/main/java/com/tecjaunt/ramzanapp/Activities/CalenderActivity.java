@@ -1,10 +1,10 @@
 package com.tecjaunt.ramzanapp.Activities;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,10 +19,6 @@ import com.tecjaunt.ramzanapp.networkArea.network.NetworkListener;
 import com.tecjaunt.ramzanapp.networkArea.network.networkArray;
 
 import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class CalenderActivity extends AppCompatActivity {
     ImageView back_press;

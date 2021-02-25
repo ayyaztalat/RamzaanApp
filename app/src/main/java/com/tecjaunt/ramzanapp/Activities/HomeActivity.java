@@ -9,11 +9,11 @@ import android.icu.util.Calendar;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,27 +30,14 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
-import com.tecjaunt.ramzanapp.Adapter.CalenderAdapter;
 import com.tecjaunt.ramzanapp.PreferenceDir.Preferences;
 import com.tecjaunt.ramzanapp.R;
 
 import com.tecjaunt.ramzanapp.Services.Services;
-import com.tecjaunt.ramzanapp.networkArea.APIClient;
-import com.tecjaunt.ramzanapp.networkArea.APIServce;
-import com.tecjaunt.ramzanapp.networkArea.TimingNetwork.TimingModel;
 import com.tecjaunt.ramzanapp.networkArea.TimingNetwork.TimingNetworkArray;
-import com.tecjaunt.ramzanapp.networkArea.network.NetworkListener;
-import com.tecjaunt.ramzanapp.networkArea.network.networkArray;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class HomeActivity extends AppCompatActivity {
     int MY_PERMISSIONS_REQUEST_LOCATION=10000;

@@ -1,12 +1,11 @@
 package com.tecjaunt.ramzanapp.Activities;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.tecjaunt.ramzanapp.Adapter.AllahNamesAdapter;
 import com.tecjaunt.ramzanapp.Adapter.DuaAdapter;
 import com.tecjaunt.ramzanapp.R;
 

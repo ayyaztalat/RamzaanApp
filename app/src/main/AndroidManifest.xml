@@ -20,7 +20,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".AudioActivity.AudioActivity"></activity>
         <activity android:name=".Activities.DuaDetails" />
-        <activity android:name=".Activities.CalenderActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".Activities.CalenderActivity"/>
         <activity android:name=".Activities.DuaLayout" />
         <activity android:name=".Activities.MuhammadActivity" />
         <activity android:name=".Activities.AllahNameActivity" />
@@ -48,7 +48,7 @@
         <service
             android:name=".Services.Services"
             android:enabled="true"
-            android:process=":Services"></service>
+            android:process=":Services"/>
     </application>
 
 </manifest>
