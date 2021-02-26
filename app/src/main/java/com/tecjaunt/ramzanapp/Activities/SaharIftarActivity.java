@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.Adapter.TimeAdapter;
 import com.tecjaunt.ramzanapp.PreferenceDir.Preferences;
 import com.tecjaunt.ramzanapp.R;
@@ -34,6 +36,10 @@ public class SaharIftarActivity extends AppCompatActivity {
         setContentView(R.layout.azan_time_current);
         calender_opener=findViewById(R.id.calender_opener);
         back_press=findViewById(R.id.back_press);
+
+        RelativeLayout adLayout=findViewById(R.id.adLayout);
+        AdManger.init(this);
+        AdManger.loadBannerAds(adLayout,this);
 
         recycler_view=findViewById(R.id.recycler_view);
         recycler_view.setHasFixedSize(true);

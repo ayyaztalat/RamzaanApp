@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
+import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.Adapter.DuaAdapter;
 import com.tecjaunt.ramzanapp.R;
 
@@ -38,6 +40,10 @@ public class DuaLayout extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dua_page);
+
+        RelativeLayout adLayout=findViewById(R.id.adLayout);
+        AdManger.init(this);
+        AdManger.loadBannerAds(adLayout,this);
 
         back_press=findViewById(R.id.back_press);
         ListView allah_name_recycler=findViewById(R.id.ListView);

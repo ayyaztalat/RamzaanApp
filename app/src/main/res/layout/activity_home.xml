@@ -52,7 +52,7 @@
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top"
-        app:layout_constraintVertical_bias="0.120000005">
+        app:layout_constraintVertical_bias="0.07999998">
 
 
         <LinearLayout
@@ -97,7 +97,7 @@
         app:layout_constraintHorizontal_bias="0.97"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top"
-        app:layout_constraintVertical_bias="0.120000005">
+        app:layout_constraintVertical_bias="0.060000002">
 
 
         <LinearLayout
@@ -142,7 +142,7 @@
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top"
-        app:layout_constraintVertical_bias="0.52">
+        app:layout_constraintVertical_bias="0.45">
 
 
         <LinearLayout
@@ -187,7 +187,7 @@
         app:layout_constraintHorizontal_bias="0.97"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top"
-        app:layout_constraintVertical_bias="0.52">
+        app:layout_constraintVertical_bias="0.45">
 
 
         <LinearLayout
@@ -231,10 +231,9 @@
         app:cardCornerRadius="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="@+id/background_main"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top"
-        app:layout_constraintVertical_bias="0.96">
+        app:layout_constraintVertical_bias="0.82">
 
 
         <LinearLayout
@@ -266,6 +265,27 @@
 
 
     </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+
+        android:id="@+id/adLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/loading_ad"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

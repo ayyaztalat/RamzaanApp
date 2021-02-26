@@ -16,9 +16,11 @@
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/xml"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:requestLegacyExternalStorage="true"
+        android:preserveLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AudioActivity.AudioActivity"></activity>
+        <activity android:name=".AudioActivity.AudioActivity"/>
         <activity android:name=".Activities.DuaDetails" />
         <activity android:name=".Activities.CalenderActivity"/>
         <activity android:name=".Activities.DuaLayout" />
@@ -49,6 +51,10 @@
             android:name=".Services.Services"
             android:enabled="true"
             android:process=":Services"/>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_id"/>
     </application>
 
 </manifest>

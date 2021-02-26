@@ -41,7 +41,7 @@
         android:layout_height="@dimen/_450sdp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/_12sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/adLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -76,10 +76,10 @@
                     android:id="@+id/share"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
                     android:layout_weight="0.4"
                     android:padding="@dimen/_5sdp"
-                    android:src="@drawable/share" />
+                    android:src="@drawable/share"
+                    android:visibility="gone" />
             </LinearLayout>
 
             <View
@@ -103,8 +103,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_gravity="center"
-                    android:padding="@dimen/_8sdp"
                     android:gravity="center"
+                    android:padding="@dimen/_8sdp"
                     android:text="بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم"
 
                     android:textSize="@dimen/_14sdp" />
@@ -164,5 +164,27 @@
 
 
     </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+
+        android:id="@+id/adLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/loading_ad"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+    </RelativeLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

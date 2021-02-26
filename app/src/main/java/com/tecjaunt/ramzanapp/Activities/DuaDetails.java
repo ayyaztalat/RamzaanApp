@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.R;
 
 public class DuaDetails extends AppCompatActivity {
@@ -19,6 +21,10 @@ public class DuaDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dua_full_screen);
+
+        RelativeLayout adLayout=findViewById(R.id.adLayout);
+        AdManger.init(this);
+        AdManger.loadBannerAds(adLayout,this);
 
         Intent getintent=getIntent();
         if (getintent!=null){

@@ -8,9 +8,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.Alarm;
 import com.tecjaunt.ramzanapp.PreferenceDir.Preferences;
 import com.tecjaunt.ramzanapp.R;
@@ -33,6 +35,12 @@ public class AzanTimeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_azan_time);
+
+        RelativeLayout adLayout=findViewById(R.id.adLayout);
+        AdManger.init(this);
+        AdManger.loadBannerAds(adLayout,this);
+
+
         back_press=findViewById(R.id.back_press);
         back_press.setOnClickListener(new View.OnClickListener() {
             @Override

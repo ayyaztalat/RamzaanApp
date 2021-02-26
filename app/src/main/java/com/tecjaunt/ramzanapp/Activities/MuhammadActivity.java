@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
+import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.Adapter.MuhammadNamesAdapter;
 import com.tecjaunt.ramzanapp.R;
 
@@ -62,6 +64,10 @@ public class MuhammadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.muhammad_layout);
         back_press=findViewById(R.id.back_press);
+
+        RelativeLayout adLayout=findViewById(R.id.adLayout);
+        AdManger.init(this);
+        AdManger.loadBannerAds(adLayout,this);
 
         try {
             // for assets folder add empty string

@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -30,6 +31,7 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.PreferenceDir.Preferences;
 import com.tecjaunt.ramzanapp.R;
 
@@ -46,12 +48,18 @@ public class HomeActivity extends AppCompatActivity {
     Preferences preferences;
     int month,year;
     Calendar calendar;
+    AdManger adManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         preferences=new Preferences(this);
         long time= System.currentTimeMillis();
+
+        RelativeLayout adLayout=findViewById(R.id.adLayout);
+
+        AdManger.init(this);
+        AdManger.loadBannerAds(adLayout,this);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             calendar = Calendar.getInstance();
