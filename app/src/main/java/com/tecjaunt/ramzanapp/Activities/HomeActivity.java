@@ -26,6 +26,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -49,6 +51,9 @@ public class HomeActivity extends AppCompatActivity {
     int month,year;
     Calendar calendar;
     AdManger adManager;
+
+    int global=0;
+    FullScreenContentCallback callback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +65,38 @@ public class HomeActivity extends AppCompatActivity {
 
         AdManger.init(this);
         AdManger.loadBannerAds(adLayout,this);
+
+         callback=new FullScreenContentCallback(){
+            @Override
+            public void onAdDismissedFullScreenContent() {
+                super.onAdDismissedFullScreenContent();
+                if (global==0){
+                    startActivity(new Intent(getApplicationContext(), SaharIftarActivity.class));
+                }else if (global==1){
+                    startActivity(new Intent(getApplicationContext(), AllahNameActivity.class));
+
+                }else if (global ==2){
+                    startActivity(new Intent(getApplicationContext(), MuhammadActivity.class));
+                }else if (global ==3){
+                    startActivity(new Intent(getApplicationContext(), DuaLayout.class));
+
+                }
+            }
+
+            @Override
+            public void onAdFailedToShowFullScreenContent(AdError adError) {
+                super.onAdFailedToShowFullScreenContent(adError);
+                Log.e("error","failed to show");
+            }
+
+            @Override
+            public void onAdShowedFullScreenContent() {
+                super.onAdShowedFullScreenContent();
+                Log.e("error","showing ad");
+            }
+        };
+
+        AdManger.loadInterstial(this,callback);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             calendar = Calendar.getInstance();
@@ -110,6 +147,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         return requestQueue;
     }
+
     private void startSecond_API_For_DATE_PRAYER(long time) {
 
      /*   array.GETWeather(new NetworkListener<ArrayList>() {
@@ -312,28 +350,48 @@ queue.add(objectRequest);
         Sahar_Iftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),SaharIftarActivity.class));
+                global = 0;
+                if (AdManger.isInterstialLoaded()) {
+                    AdManger.showInterstial(HomeActivity.this, HomeActivity.this, callback);
+                } else {
+                    startActivity(new Intent(getApplicationContext(), SaharIftarActivity.class));
+                }
             }
         });
 
         Allah_name_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AllahNameActivity.class));
+                global = 1;
+                if (AdManger.isInterstialLoaded()) {
+                    AdManger.showInterstial(HomeActivity.this, HomeActivity.this, callback);
+                } else {
+                    startActivity(new Intent(getApplicationContext(), AllahNameActivity.class));
+                }
             }
         });
 
         Muhammad_name_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MuhammadActivity.class));
+                global = 2;
+                if (AdManger.isInterstialLoaded()) {
+                    AdManger.showInterstial(HomeActivity.this, HomeActivity.this, callback);
+                } else {
+                    startActivity(new Intent(getApplicationContext(), MuhammadActivity.class));
+                }
             }
         });
 
         Dua_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),DuaLayout.class));
+                global = 3;
+                if (AdManger.isInterstialLoaded()) {
+                    AdManger.showInterstial(HomeActivity.this, HomeActivity.this, callback);
+                } else {
+                    startActivity(new Intent(getApplicationContext(), DuaLayout.class));
+                }
             }
         });
 

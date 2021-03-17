@@ -2,21 +2,21 @@
 
 <HorizontalScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:orientation="horizontal"
-    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    
+    android:layout_height="match_parent"
     android:layout_marginTop="@dimen/_8sdp">
 
 <LinearLayout
     android:layout_width="wrap_content"
-    android:orientation="horizontal"
-    android:layout_margin="@dimen/_5sdp"
+    android:orientation="vertical"
     android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="@dimen/_100sdp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_height="@dimen/_40sdp">
         <TextView
             android:layout_width="@dimen/_100sdp"
             android:textColor="@color/black"
@@ -25,7 +25,7 @@
             android:textSize="@dimen/_15sdp"
             android:layout_gravity="center"
             android:text="Hijri Data"
-
+            android:visibility="gone"
             android:gravity="center"
             android:id="@+id/ramzan_date_title"
             android:layout_height="wrap_content" />
@@ -43,12 +43,14 @@
 
 <LinearLayout
     android:layout_width="@dimen/_100sdp"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/_40sdp"
+    android:layout_margin="@dimen/_2sdp"
     android:orientation="vertical">
     <TextView
         android:layout_width="@dimen/_100sdp"
         android:id="@+id/Date_string"
         android:text="Date"
+        android:visibility="gone"
         android:textColor="@color/black"
         android:background="@color/white"
         android:padding="@dimen/_5sdp"
@@ -71,7 +73,8 @@
     <LinearLayout
         android:layout_width="@dimen/_100sdp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_height="@dimen/_40sdp">
     <TextView
         android:layout_width="@dimen/_100sdp"
        android:text="Day"
@@ -80,6 +83,7 @@
         android:padding="@dimen/_5sdp"
         android:textSize="@dimen/_15sdp"
         android:layout_gravity="center"
+        android:visibility="gone"
         android:gravity="center"
         android:layout_height="wrap_content" />
         <TextView
@@ -96,10 +100,12 @@
      <LinearLayout
         android:layout_width="@dimen/_100sdp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+         android:layout_margin="@dimen/_2sdp"
+         android:layout_height="@dimen/_40sdp">
     <TextView
         android:layout_width="@dimen/_100sdp"
        android:text="Fajr"
+        android:visibility="gone"
         android:textColor="@color/black"
         android:background="@color/white"
         android:padding="@dimen/_5sdp"
@@ -122,12 +128,14 @@
      <LinearLayout
         android:layout_width="@dimen/_100sdp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+         android:layout_margin="@dimen/_2sdp"
+         android:layout_height="@dimen/_40sdp">
     <TextView
         android:layout_width="@dimen/_100sdp"
        android:text="Sunrise"
         android:textColor="@color/black"
         android:background="@color/white"
+        android:visibility="gone"
         android:padding="@dimen/_5sdp"
         android:textSize="@dimen/_15sdp"
         android:layout_gravity="center"
@@ -147,10 +155,12 @@
      <LinearLayout
         android:layout_width="@dimen/_100sdp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+         android:layout_margin="@dimen/_2sdp"
+         android:layout_height="@dimen/_40sdp">
     <TextView
         android:layout_width="@dimen/_100sdp"
         android:text="Dhuhr"
+        android:visibility="gone"
         android:textColor="@color/black"
         android:background="@color/white"
         android:padding="@dimen/_5sdp"
@@ -172,12 +182,14 @@
      <LinearLayout
         android:layout_width="@dimen/_100sdp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+         android:layout_margin="@dimen/_2sdp"
+         android:layout_height="@dimen/_40sdp">
     <TextView
         android:layout_width="@dimen/_100sdp"
         android:text="Asr"
         android:textColor="@color/black"
         android:background="@color/white"
+        android:visibility="gone"
         android:padding="@dimen/_5sdp"
         android:textSize="@dimen/_15sdp"
         android:layout_gravity="center"
@@ -197,10 +209,12 @@
      <LinearLayout
         android:layout_width="@dimen/_100sdp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+         android:layout_margin="@dimen/_2sdp"
+         android:layout_height="@dimen/_40sdp">
     <TextView
         android:layout_width="@dimen/_100sdp"
         android:text="Sunset"
+        android:visibility="gone"
         android:textColor="@color/black"
         android:background="@color/white"
         android:padding="@dimen/_5sdp"
@@ -221,10 +235,12 @@
      <LinearLayout
         android:layout_width="@dimen/_100sdp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+         android:layout_margin="@dimen/_2sdp"
+         android:layout_height="@dimen/_40sdp">
     <TextView
         android:layout_width="@dimen/_100sdp"
        android:text="Magrib"
+        android:visibility="gone"
         android:textColor="@color/black"
         android:background="@color/white"
         android:padding="@dimen/_5sdp"
@@ -246,12 +262,14 @@
      <LinearLayout
         android:layout_width="@dimen/_100sdp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+         android:layout_margin="@dimen/_2sdp"
+         android:layout_height="@dimen/_40sdp">
     <TextView
         android:layout_width="@dimen/_100sdp"
         android:text="Isha"
         android:textColor="@color/black"
         android:background="@color/white"
+        android:visibility="gone"
         android:padding="@dimen/_5sdp"
         android:textSize="@dimen/_15sdp"
         android:layout_gravity="center"
@@ -271,11 +289,13 @@
      <LinearLayout
         android:layout_width="@dimen/_100sdp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+         android:layout_margin="@dimen/_2sdp"
+         android:layout_height="@dimen/_40sdp">
     <TextView
         android:layout_width="@dimen/_100sdp"
         android:text="Imsak"
         android:textColor="@color/black"
+        android:visibility="gone"
         android:background="@color/white"
         android:padding="@dimen/_5sdp"
         android:textSize="@dimen/_15sdp"
@@ -295,13 +315,15 @@
      <LinearLayout
         android:layout_width="@dimen/_100sdp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+         android:layout_margin="@dimen/_2sdp"
+         android:layout_height="@dimen/_40sdp">
   <TextView
         android:layout_width="@dimen/_100sdp"
        android:text="Midnight"
         android:textColor="@color/black"
       android:background="@color/white"
       android:padding="@dimen/_5sdp"
+      android:visibility="gone"
       android:textSize="@dimen/_15sdp"
         android:layout_gravity="center"
         android:gravity="center"

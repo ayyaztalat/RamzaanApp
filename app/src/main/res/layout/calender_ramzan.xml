@@ -6,7 +6,6 @@
 
     <LinearLayout
         android:id="@+id/top"
-
         android:background="@drawable/topbar"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -33,15 +32,15 @@
 
     </LinearLayout>
 
-    <HorizontalScrollView
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <ScrollView
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@+id/top"
         android:id="@+id/horizontal_abc">
     <LinearLayout
         android:id="@+id/line1"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_margin="@dimen/_5sdp"
         android:background="@color/white"
         android:layout_width="wrap_content"
@@ -49,7 +48,7 @@
 
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -58,7 +57,7 @@
 
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -67,7 +66,7 @@
 
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -76,7 +75,7 @@
 
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -85,7 +84,7 @@
 
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -93,7 +92,7 @@
             android:text="Sunrise"/>
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -101,7 +100,7 @@
             android:text="Dhuhr"/>
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -109,7 +108,7 @@
             android:text="Asr"/>
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -117,7 +116,7 @@
             android:text="Sunset"/>
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -125,7 +124,7 @@
             android:text="Magrib"/>
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -133,7 +132,7 @@
             android:text="Isha"/>
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -141,7 +140,7 @@
             android:text="Imsak"/>
         <TextView
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -149,18 +148,20 @@
             android:text="Midnight"/>
 
     </LinearLayout>
-    </HorizontalScrollView>
+    </ScrollView>
     <LinearLayout
         android:id="@+id/recycler_calender"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@+id/horizontal_abc"
+        android:layout_below="@+id/top"
+        android:orientation="horizontal"
+        android:layout_toEndOf="@+id/horizontal_abc"
         android:layout_margin="@dimen/_2sdp"
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/reyclerview_calender"
             android:layout_width="match_parent"
+
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_height="match_parent"/>
     </LinearLayout>

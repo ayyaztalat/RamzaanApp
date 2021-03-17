@@ -45,7 +45,7 @@ public class CalenderActivity extends AppCompatActivity {
 
         array=new networkArray(this);
         reyclerview_calender=findViewById(R.id.reyclerview_calender);
-        linearLayoutManager=new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        linearLayoutManager=new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         reyclerview_calender.setHasFixedSize(true);
         reyclerview_calender.setLayoutManager(linearLayoutManager);
 

@@ -32,13 +32,13 @@ object AdManger {
     var adLayout: RelativeLayout? = null
     var adView: AdView? = null
 
-    private const val interstitialAdsSimple = "ca-app-pub-3005749278400559~3051755351"
-    private const val interstitialAds = "ca-app-pub-3005749278400559/6169154115"
-    private const val interstitialAds2 = "ca-app-pub-3005749278400559/3150514625"
-
-
-    private const val rewarded_video_add_id ="ca-app-pub-3005749278400559/5869258872"
-    private const val rewarded_video_add_id_2 ="ca-app-pub-3005749278400559/8564588138"
+//    private const val interstitialAdsSimple = "ca-app-pub-3005749278400559~3051755351"
+    private const val interstitialAds = "ca-app-pub-6505777977604901/1441290559"
+//    private const val interstitialAds2 = "ca-app-pub-3005749278400559/3150514625"
+//
+//
+//    private const val rewarded_video_add_id ="ca-app-pub-3005749278400559/5869258872"
+//    private const val rewarded_video_add_id_2 ="ca-app-pub-3005749278400559/8564588138"
 
 
 
@@ -62,15 +62,15 @@ object AdManger {
         (setUpAds(activity))
     }
 
-    private const val BANNER_ID_1 = "ca-app-pub-3005749278400559/8130899637"
-    private const val BANER_ID_2 = "ca-app-pub-3005749278400559/3324328221"
+//    private const val BANNER_ID_1 = "ca-app-pub-6505777977604901/2343676249"
+    private const val BANER_ID_2 = "ca-app-pub-6505777977604901/9462822208"
 
     private fun setUpAds(activity: Activity) {
         try {
             adView = AdView(activity)
 
             if (laodBannerId()){
-                adView!!.adUnitId = BANNER_ID_1
+                adView!!.adUnitId = BANER_ID_2
             }else{
                 adView!!.adUnitId = BANER_ID_2
             }
@@ -172,7 +172,7 @@ object AdManger {
                     val adRequest = AdRequest.Builder().build()
                     InterstitialAd.load(
                         context,
-                        interstitialAds2,
+                        interstitialAds,
                         adRequest,
                         object : InterstitialAdLoadCallback() {
                             override fun onAdFailedToLoad(loadingError: LoadAdError) {
@@ -253,10 +253,10 @@ object AdManger {
                 if (mRewardedAd == null) {
 
                     if (loadRewarStatus) {
-                        mRewardedAd = RewardedAd(activity, rewarded_video_add_id)
+                        mRewardedAd = RewardedAd(activity, "rewarded_video_add_id")
                         Log.e("TAG", "Ads is laoding id 2 load")
                     } else {
-                        mRewardedAd = RewardedAd(activity, rewarded_video_add_id_2)
+                        mRewardedAd = RewardedAd(activity, "rewarded_video_add_id_2")
                         Log.e("TAG", "Ads is laoding id 2 load")
                     }
 
@@ -271,10 +271,10 @@ object AdManger {
                     } else {
 
                         if (loadRewarStatus) {
-                            mRewardedAd = RewardedAd(activity, rewarded_video_add_id)
+                            mRewardedAd = RewardedAd(activity, "rewarded_video_add_id")
                             Log.e("TAG", "Ads is already load")
                         } else {
-                            mRewardedAd = RewardedAd(activity, rewarded_video_add_id_2)
+                            mRewardedAd = RewardedAd(activity, "rewarded_video_add_id_2")
                             Log.e("TAG", "Ads is laoding id 2 load")
                         }
 
@@ -451,7 +451,7 @@ object AdManger {
         }
     }
 
-
+//
 //    interface AdManagerListener {
 //        fun onAdClose(catname: String, pos: Int)
 //        fun onAdClose(string: String)

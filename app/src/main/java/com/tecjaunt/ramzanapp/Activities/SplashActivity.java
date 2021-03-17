@@ -21,8 +21,6 @@ public class SplashActivity extends AppCompatActivity {
             Handler2();
         }
 
-
-
     }
 
     private void Handler2() {
