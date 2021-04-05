@@ -19,6 +19,7 @@ import java.util.*
 @SuppressLint("StaticFieldLeak")
 object AdManger {
 
+    private lateinit var adCallBackInterstisial: FullScreenContentCallback
     var mIntersital: InterstitialAd?=null
     var mRewardedAd: RewardedAd? = null
     var mRewardItem = false
@@ -26,7 +27,7 @@ object AdManger {
     var adCallBackRewardedAd: CallBackRewardedAd? = null
 
 
-    //    var adCallbackInterstisial: AdManagerListener? = null
+
     var context: Context?=null
     var loadRewarStatus = false
     var adLayout: RelativeLayout? = null
@@ -62,7 +63,7 @@ object AdManger {
         (setUpAds(activity))
     }
 
-//    private const val BANNER_ID_1 = "ca-app-pub-6505777977604901/2343676249"
+    private const val BANNER_ID_1 = "ca-app-pub-6505777977604901/2343676249"
     private const val BANER_ID_2 = "ca-app-pub-6505777977604901/9462822208"
 
     private fun setUpAds(activity: Activity) {
@@ -123,7 +124,6 @@ object AdManger {
             return AdSize.BANNER
         }
     }
-
     @JvmStatic
     fun loadInterstial(context: Context,adCallback: FullScreenContentCallback) {
 //
@@ -147,7 +147,8 @@ object AdManger {
 //
 //        }
 
-//        adCallBackInterstisial = adCallback
+        adCallBackInterstisial = adCallback
+        /** ads rokh di hn loading  **/
         try {
             if (mIntersital == null) {
                 if (laodIntersititalId()) {
@@ -196,7 +197,6 @@ object AdManger {
         }catch (e:Error){
             e.printStackTrace()
         }
-
 
 //        try {
 //            mIntersital.let {
@@ -427,7 +427,7 @@ object AdManger {
 
     @JvmStatic
     fun showInterstial(activity: Activity,context: Context, adCallBack: FullScreenContentCallback) {
-//        adCallBackInterstisial = adCallBack
+        adCallBackInterstisial = adCallBack
         if (mIntersital!=null) {
             mIntersital!!.show(activity)
             loadInterstial(context, adCallBack)
@@ -452,11 +452,11 @@ object AdManger {
     }
 
 //
-//    interface AdManagerListener {
-//        fun onAdClose(catname: String, pos: Int)
-//        fun onAdClose(string: String)
-//        fun onAdCloseActivity()
-//    }
+    interface AdManagerListener {
+        fun onAdClose(catname: String, pos: Int)
+        fun onAdClose(string: String)
+        fun onAdCloseActivity()
+    }
 
     private var bannerStatus: Boolean = false
     private var intersititalStatus: Boolean = false

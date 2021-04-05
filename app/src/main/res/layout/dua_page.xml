@@ -41,12 +41,14 @@
         android:id="@+id/ListView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scrollbars="none"
         android:layout_margin="@dimen/_5sdp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/adLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top">
+        app:layout_constraintTop_toBottomOf="@+id/top"
+        app:layout_constraintVertical_bias="0.0">
 
     </ListView>
 

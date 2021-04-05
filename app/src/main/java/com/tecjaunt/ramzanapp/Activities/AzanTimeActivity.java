@@ -8,10 +8,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdListener;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.Alarm;
 import com.tecjaunt.ramzanapp.PreferenceDir.Preferences;
@@ -28,7 +34,7 @@ public class AzanTimeActivity extends AppCompatActivity {
     ImageView  fajr_image,Dhuhr_image,Asr_image,Magrib_image,Isha_Image;
 
     boolean check_one,check_two,check_three,check_four,check_five;
-
+//    AdView adView;
     Preferences preferences;
 
     @Override
@@ -37,7 +43,7 @@ public class AzanTimeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_azan_time);
 
         RelativeLayout adLayout=findViewById(R.id.adLayout);
-        AdManger.init(this);
+//        AdManger.init(this);
         AdManger.loadBannerAds(adLayout,this);
 
 
@@ -334,4 +340,6 @@ public class AzanTimeActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
+
 }

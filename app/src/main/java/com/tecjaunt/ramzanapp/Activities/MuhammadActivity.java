@@ -7,9 +7,16 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdListener;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.Adapter.MuhammadNamesAdapter;
 import com.tecjaunt.ramzanapp.R;
@@ -52,7 +59,7 @@ public class MuhammadActivity extends AppCompatActivity {
             "Known.", "Secure.", "Who is helped", "The Place of Ascent, The Above", "He who is witnessed.", "The Thankful",
             "The Strong", "Having link with Allah.", "Key to the secrets.", "Key to the secrets."};
 
-
+//    AdView adView;
     ListView muhammad_names_recycler;
     LinearLayoutManager manager;
     MuhammadNamesAdapter adapter;
@@ -66,8 +73,8 @@ public class MuhammadActivity extends AppCompatActivity {
         back_press=findViewById(R.id.back_press);
 
         RelativeLayout adLayout=findViewById(R.id.adLayout);
-        AdManger.init(this);
-        AdManger.loadBannerAds(adLayout,this);
+//        AdManger.init(this);
+//        AdManger.loadBannerAds(adLayout,this);
 
         try {
             // for assets folder add empty string
@@ -78,7 +85,10 @@ public class MuhammadActivity extends AppCompatActivity {
                 arrayList.add(fields[count].getInt(fields[count]));
             }
 
-            // if(filelistInSubfolder == null) ............
+
+            // Instantiate an AdView object.
+            // NOTE: The placement ID from the Facebook Monetization Manager identifies your App.
+            // To get test ads, add IMG_16_9_APP_INSTALL# to your placement id. Remove this when your app is ready to serve real ads.
 
         } catch (IllegalAccessException e) {
             e.printStackTrace();
@@ -104,4 +114,6 @@ public class MuhammadActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
+
 }

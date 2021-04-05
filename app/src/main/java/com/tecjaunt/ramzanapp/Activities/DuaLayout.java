@@ -4,9 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdListener;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.Adapter.DuaAdapter;
 import com.tecjaunt.ramzanapp.R;
@@ -35,6 +42,7 @@ public class DuaLayout extends AppCompatActivity {
 
     DuaAdapter adapter;
     ImageView back_press;
+//    AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +50,14 @@ public class DuaLayout extends AppCompatActivity {
         setContentView(R.layout.dua_page);
 
         RelativeLayout adLayout=findViewById(R.id.adLayout);
-        AdManger.init(this);
+//        AdManger.init(this);
         AdManger.loadBannerAds(adLayout,this);
+
+
+
+        // Instantiate an AdView object.
+        // NOTE: The placement ID from the Facebook Monetization Manager identifies your App.
+        // To get test ads, add IMG_16_9_APP_INSTALL# to your placement id. Remove this when your app is ready to serve real ads.
 
         back_press=findViewById(R.id.back_press);
         ListView allah_name_recycler=findViewById(R.id.ListView);
@@ -70,4 +84,7 @@ public class DuaLayout extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
+
+
 }

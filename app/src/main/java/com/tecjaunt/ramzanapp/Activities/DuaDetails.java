@@ -5,16 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdListener;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.R;
 
 public class DuaDetails extends AppCompatActivity {
     ImageView back_press;
     TextView arabic_text,transliterations,meaning;
-
     String arabic_lines, meanings_line,transliterations_line;
 
     @Override
@@ -23,8 +29,14 @@ public class DuaDetails extends AppCompatActivity {
         setContentView(R.layout.dua_full_screen);
 
         RelativeLayout adLayout=findViewById(R.id.adLayout);
-        AdManger.init(this);
+//        AdManger.init(this);
         AdManger.loadBannerAds(adLayout,this);
+
+
+        // Instantiate an AdView object.
+        // NOTE: The placement ID from the Facebook Monetization Manager identifies your App.
+        // To get test ads, add IMG_16_9_APP_INSTALL# to your placement id. Remove this when your app is ready to serve real ads.
+
 
         Intent getintent=getIntent();
         if (getintent!=null){
@@ -62,4 +74,6 @@ public class DuaDetails extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
+
 }

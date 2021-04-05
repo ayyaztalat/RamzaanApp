@@ -41,11 +41,11 @@
         android:layout_height="@dimen/_450sdp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/_12sdp"
-        app:layout_constraintBottom_toTopOf="@+id/adLayout"
+        app:layout_constraintBottom_toTopOf="@+id/banner_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62">
+        app:layout_constraintTop_toBottomOf="@+id/top"
+        app:layout_constraintVertical_bias="0.22">
 
 
         <LinearLayout
@@ -185,6 +185,7 @@
             android:textColor="@color/black"
             android:textSize="14dp" />
     </RelativeLayout>
+
 
 
 

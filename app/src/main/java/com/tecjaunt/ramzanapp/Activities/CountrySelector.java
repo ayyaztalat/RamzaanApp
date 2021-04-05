@@ -15,9 +15,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdListener;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.tecjaunt.ramzanapp.PreferenceDir.Preferences;
 import com.tecjaunt.ramzanapp.R;
 
@@ -33,6 +39,7 @@ public class CountrySelector extends AppCompatActivity {
     Preferences preferences;
     String countryName;
     RadioButton hunfi,jafri;
+//    AdView adView;
     public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
 
     @Override
@@ -43,6 +50,12 @@ public class CountrySelector extends AppCompatActivity {
         if(checkAndRequestPermissions()) {
             // carry on the normal flow, as the case of  permissions  granted.
         }
+
+
+
+        // Instantiate an AdView object.
+        // NOTE: The placement ID from the Facebook Monetization Manager identifies your App.
+        // To get test ads, add IMG_16_9_APP_INSTALL# to your placement id. Remove this when your app is ready to serve real ads.
 
         preferences=new Preferences(this);
 
@@ -213,5 +226,6 @@ public class CountrySelector extends AppCompatActivity {
             }
         });
     }
+
 
 }

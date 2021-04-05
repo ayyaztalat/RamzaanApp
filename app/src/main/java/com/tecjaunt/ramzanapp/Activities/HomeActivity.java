@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -26,7 +27,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.ads.AdError;
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdListener;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -50,8 +55,8 @@ public class HomeActivity extends AppCompatActivity {
     Preferences preferences;
     int month,year;
     Calendar calendar;
-    AdManger adManager;
-
+//    AdManger adManager;
+//AdView adView;
     int global=0;
     FullScreenContentCallback callback;
     @Override
@@ -61,12 +66,17 @@ public class HomeActivity extends AppCompatActivity {
         preferences=new Preferences(this);
         long time= System.currentTimeMillis();
 
+
+        // Instantiate an AdView object.
+        // NOTE: The placement ID from the Facebook Monetization Manager identifies your App.
+        // To get test ads, add IMG_16_9_APP_INSTALL# to your placement id. Remove this when your app is ready to serve real ads.
+
         RelativeLayout adLayout=findViewById(R.id.adLayout);
 
-        AdManger.init(this);
+//        AdManger.init(this);
         AdManger.loadBannerAds(adLayout,this);
 
-         callback=new FullScreenContentCallback(){
+/*         callback=new FullScreenContentCallback(){
             @Override
             public void onAdDismissedFullScreenContent() {
                 super.onAdDismissedFullScreenContent();
@@ -95,7 +105,7 @@ public class HomeActivity extends AppCompatActivity {
                 Log.e("error","showing ad");
             }
         };
-
+*/
         AdManger.loadInterstial(this,callback);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
@@ -453,4 +463,5 @@ queue.add(objectRequest);
         super.onStop();
 
     }
+
 }

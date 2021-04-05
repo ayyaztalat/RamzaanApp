@@ -9,9 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdListener;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.google.gson.Gson;
 import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.Adapter.TimeAdapter;
@@ -38,8 +45,13 @@ public class SaharIftarActivity extends AppCompatActivity {
         back_press=findViewById(R.id.back_press);
 
         RelativeLayout adLayout=findViewById(R.id.adLayout);
-        AdManger.init(this);
+//        AdManger.init(this);
         AdManger.loadBannerAds(adLayout,this);
+
+
+        // Instantiate an AdView object.
+        // NOTE: The placement ID from the Facebook Monetization Manager identifies your App.
+        // To get test ads, add IMG_16_9_APP_INSTALL# to your placement id. Remove this when your app is ready to serve real ads.
 
         recycler_view=findViewById(R.id.recycler_view);
         recycler_view.setHasFixedSize(true);
@@ -129,4 +141,6 @@ public class SaharIftarActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
+
 }

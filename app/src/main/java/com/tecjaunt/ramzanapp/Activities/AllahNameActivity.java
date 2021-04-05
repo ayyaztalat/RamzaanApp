@@ -6,9 +6,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdListener;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.tecjaunt.ramzanapp.AdManger;
 import com.tecjaunt.ramzanapp.Adapter.AllahNamesAdapter;
 import com.tecjaunt.ramzanapp.R;
@@ -50,13 +57,12 @@ public class AllahNameActivity extends AppCompatActivity {
     ImageView back_press;
     AllahNamesAdapter adapter;
     ArrayList<Integer> arrayList=new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.allah_names_layout);
         RelativeLayout adLayout=findViewById(R.id.adLayout);
-        AdManger.init(this);
+
         AdManger.loadBannerAds(adLayout,this);
         back_press=findViewById(R.id.back_press);
         try {
@@ -67,8 +73,6 @@ public class AllahNameActivity extends AppCompatActivity {
             for (int count=0;count<fields.length;count++){
                 arrayList.add(fields[count].getInt(fields[count]));
             }
-
-            // if(filelistInSubfolder == null) ............
 
         } catch (IllegalAccessException e) {
             e.printStackTrace();
@@ -84,6 +88,8 @@ public class AllahNameActivity extends AppCompatActivity {
         onclicks();
 
     }
+
+
 
     private void onclicks() {
         back_press.setOnClickListener(new View.OnClickListener() {
