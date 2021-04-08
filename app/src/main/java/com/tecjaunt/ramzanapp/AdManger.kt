@@ -2,9 +2,12 @@ package com.tecjaunt.ramzanapp
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.Application.getProcessName
 import android.content.Context
+import android.os.Build
 import android.util.DisplayMetrics
 import android.util.Log
+import android.webkit.WebView
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import com.google.android.gms.ads.*
@@ -45,7 +48,21 @@ object AdManger {
 
     @JvmStatic
     fun init(context: Context) {
-        MobileAds.initialize(context)
+//        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                val process = getProcessName()
+                if (context.packageName != process) WebView.setDataDirectorySuffix(process)
+            }
+
+            MobileAds.initialize(context)
+//            AudienceNetworkAds.initialize(this)
+
+//        } catch (e: Error) {
+//            e.printStackTrace()
+//        } catch (e: Exception) {
+//           e.printStackTrace()
+//        }
+//        MobileAds.initialize(context)
 //        mIntersital = InterstitialAd(context)
 //        mIntersital.adUnitId = interstitialAds
         this.context = context

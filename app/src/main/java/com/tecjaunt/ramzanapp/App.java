@@ -2,7 +2,6 @@ package com.tecjaunt.ramzanapp;
 
 import android.app.Application;
 
-import com.facebook.ads.AudienceNetworkAds;
 
 public class App extends Application {
 

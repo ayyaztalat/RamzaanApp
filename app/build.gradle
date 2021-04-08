@@ -2,13 +2,21 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Volumes/Hard2/StudioProjects/RamzaanApp/app/ramzan')
+            storePassword '009631Hira'
+            keyPassword '009631Hira'
+            keyAlias '009631Hira'
+        }
+    }
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.islam.muslims.ramzanapp"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 5
-        versionName "1.4"
+        versionCode 7
+        versionName "1.6"
         multiDexEnabled true
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
@@ -16,10 +24,20 @@ android {
     // build key 009631Hira
     // build password 009631Hira
 
+    android {
+        lintOptions {
+            checkReleaseBuilds false
+            // Or, if you prefer, you can continue to check for errors in release builds,
+            // but continue the build even when errors are found:
+            abortOnError false
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -55,7 +73,6 @@ dependencies {
 //    implementation 'org.jetbrains:annotations-java5:15.0'
     implementation "androidx.core:core-ktx:+"
     implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.facebook.android:audience-network-sdk:6.+'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {

@@ -27,11 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.facebook.ads.Ad;
-import com.facebook.ads.AdError;
-import com.facebook.ads.AdListener;
-import com.facebook.ads.AdSize;
-import com.facebook.ads.AdView;
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -76,7 +72,7 @@ public class HomeActivity extends AppCompatActivity {
 //        AdManger.init(this);
         AdManger.loadBannerAds(adLayout,this);
 
-/*         callback=new FullScreenContentCallback(){
+         callback=new FullScreenContentCallback(){
             @Override
             public void onAdDismissedFullScreenContent() {
                 super.onAdDismissedFullScreenContent();
@@ -91,21 +87,20 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), DuaLayout.class));
 
                 }
+
             }
 
-            @Override
-            public void onAdFailedToShowFullScreenContent(AdError adError) {
-                super.onAdFailedToShowFullScreenContent(adError);
-                Log.e("error","failed to show");
-            }
+             @Override
+             public void onAdFailedToShowFullScreenContent(AdError adError) {
+                 super.onAdFailedToShowFullScreenContent(adError);
+             }
 
-            @Override
+             @Override
             public void onAdShowedFullScreenContent() {
                 super.onAdShowedFullScreenContent();
                 Log.e("error","showing ad");
             }
         };
-*/
         AdManger.loadInterstial(this,callback);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
